@@ -6,7 +6,7 @@ require(`./lib/mongoose-setup`);
 const server = http.createServer(app);
 
 server.listen(port, function() {
-  `Server listening on ${server.address}`;
+  console.log(`Server listening on 3000`);
 });
 
 module.exports = server;

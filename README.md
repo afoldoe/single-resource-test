@@ -4,8 +4,7 @@
 
 An single resouce API that stores superhero information. Users can add superheroes individually or get a list of all super heroes currenty in the database.
 
-*Note*
-MongoDB is required locally to use API
+**MongoDB is required locally to use API**
 
 ###Usage###
 

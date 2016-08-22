@@ -7,7 +7,7 @@ const app = require(`../lib/app`);
 const mongoose = require(`mongoose`);
 const connection = require(`../lib/mongoose-setup`);
 
-describe(`e2e testing of the superhereo API`, () => {
+describe(`e2e testing of the images API`, () => {
 
   before(done => {
     mongoose.connect(`mongodb://localhost/user`, () => {
@@ -18,17 +18,16 @@ describe(`e2e testing of the superhereo API`, () => {
   });
 
   const request = chai.request(app);
-  let sample1 = {name: `Wonder Woman`, power: [`super strength`, `flight`]};
-  let sample2 = {name: `Magneto`, power: [`metal manipulation`, `flight`]};
+  let sample1 = {title: `Wonder Woman`, url: `http://google.com/wonder-woman`, caption: `Wonder Woman defeats Maxwell Lord`};
+  let sample2 = {title: `Magneto`, url: `http://google.com/magneto`, caption: `Magneto leaves Xavier forever`};
 
   it(`tests that we can post a new superhereo`, done => {
     request
       .post(`/`)
       .send(sample1)
       .then(res => {
-        assert.equal(res.body.name, `Wonder Woman`);
-        assert.isArray(res.body.power);
-        assert.deepEqual(res.body.power, [`super strength`, `flight`]);
+        assert.equal(res.body.title, `Wonder Woman`);
+        assert.deepEqual(res.body.url, `http://google.com/wonder-woman`);
         done();
       })
       .catch(done);
@@ -46,8 +45,8 @@ describe(`e2e testing of the superhereo API`, () => {
     request
       .get(`/`)
       .then(res => {
-        console.log(res.body);
-        assert.equal(res.body[1].name, `Magneto`);
+        assert.equal(res.body.length, 2);
+        assert.equal(res.body[1].title, `Magneto`);
         assert.isArray(res.body);
         done();
       })

@@ -1,8 +1,8 @@
-#SUPERHERO API#
+#IMAGE GALLERY API#
 
 ###Author: Arielle Foldoe###
 
-An single resouce API that stores superhero information. Users can add superheroes individually or get a list of all super heroes currenty in the database.
+An single resouce API that stores web image information. Users can add images individually or get a list of all images currenty in the database.
 
 **MongoDB is required locally to use API**
 

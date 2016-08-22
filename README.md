@@ -7,8 +7,8 @@ An single resouce API that stores superhero information. Users can add superhero
 *Note*
 MongoDB is required locally to use API
 
--USAGE- 
+###Usage###
 
 1. Clone repo to your computer
-2. Run ```javascript npm install ``` for dependencies 
-3. Rum ```javascript npm start ``` to initialize the server
+2. Run ```npm install ``` for dependencies 
+3. Rum ```npm start ``` to initialize the server
